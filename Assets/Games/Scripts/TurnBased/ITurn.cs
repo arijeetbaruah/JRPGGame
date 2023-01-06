@@ -7,6 +7,9 @@ public interface ITurn
     void Attack();
     void TakeDamage(int dmg);
 
+    void AddStatusEffect(StatusEffect statusEffect);
+    void ApplyStatusToTarget(StatusEffect statusEffect);
+
     int HP { get; }
     int Speed { get; }
 }
