@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052cc47ae2416b24696303ff677c25a0, type: 3}
+  m_Name: Playable Character Database
+  m_EditorClassIdentifier: 
+  characters:
+    keyData:
+    - paladin
+    valueData:
+    - {fileID: 11400000, guid: 4bb4c8c3c1ca5be46905f1412c40f54c, type: 2}

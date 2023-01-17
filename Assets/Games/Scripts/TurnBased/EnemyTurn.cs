@@ -50,7 +50,9 @@ public class EnemyTurn : BaseTurn
         if (targets.Count > 0)
         {
             ITurn target = targets[Random.Range(0, targets.Count)];
-            target.TakeDamage(Random.Range(stats.attack/2, stats.attack));
+
+            float dmg = (float) stats.CalculateAttack() / (float) target.CalculateDefense();
+            target.TakeDamage(Mathf.CeilToInt(dmg));
         }
     }
 

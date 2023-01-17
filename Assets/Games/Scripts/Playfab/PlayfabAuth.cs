@@ -8,20 +8,37 @@ using UnityEngine;
 
 public static class PlayfabAuth
 {
-    public static void Login(string email, string password, Action<GetItemResponse> callback, Action<PlayFabError> errorCallback)
+    public static void LoginWithEmail(string email, string password, Action<LoginResult> callback, Action<PlayFabError> errorCallback)
     {
         PlayFabClientAPI.LoginWithEmailAddress(new LoginWithEmailAddressRequest
         {
             Email = email,
             Password = password
-        }, itemResponse =>
+        }, callback, errorCallback);
+    }
+
+    public static void LoginWithCustomID(string customID, Action<LoginResult> callback, Action<PlayFabError> errorCallback)
+    {
+        PlayFabClientAPI.LoginWithCustomID(new LoginWithCustomIDRequest
         {
-            Debug.Log(itemResponse);
-            callback?.Invoke(itemResponse);
-        }, error =>
+            CreateAccount = true,
+            CustomId = customID
+        }, callback, errorCallback);
+    }
+
+    public static void LoginWithGoogle(Action<LoginResult> callback, Action<PlayFabError> errorCallback)
+    {
+        PlayFabClientAPI.LoginWithGoogleAccount(new LoginWithGoogleAccountRequest
         {
-            Debug.LogError(error.ErrorMessage);
-            errorCallback?.Invoke(error);
-        }});
+            CreateAccount = true
+        }, callback, errorCallback);
+    }
+
+    public static void LoginWithFacebook(Action<LoginResult> callback, Action<PlayFabError> errorCallback)
+    {
+        PlayFabClientAPI.LoginWithFacebook(new LoginWithFacebookRequest
+        {
+            CreateAccount = true
+        }, callback, errorCallback);
     }
 }

@@ -9,6 +9,8 @@ public interface ITurn
 
     void AddStatusEffect(StatusEffect statusEffect);
     void ApplyStatusToTarget(StatusEffect statusEffect);
+    int CalculateDefense();
+    int CalculateMDefense();
 
     int HP { get; }
     int Speed { get; }

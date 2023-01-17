@@ -28,7 +28,7 @@ public abstract class BaseTurn : MonoBehaviour, ITurn
 
     public int HP => stats.currentHP;
 
-    public int Speed => stats.speed;
+    public int Speed => stats.stats.speed;
 
     public abstract void Attack();
 
@@ -98,6 +98,16 @@ public abstract class BaseTurn : MonoBehaviour, ITurn
         StartCoroutine(TakeDamageCorrutine(dmg));
     }
 
+    public int CalculateDefense()
+    {
+        return stats.stats.defense;
+    }
+
+    public int CalculateMDefense()
+    {
+        return stats.stats.mdefense;
+    }
+
     public void FocusCamera(bool active)
     {
         vcam.Priority = active ? 100 : 1;
@@ -105,7 +115,7 @@ public abstract class BaseTurn : MonoBehaviour, ITurn
 
     public void UpdateHP()
     {
-        float targetFill = (float)stats.currentHP / (float)stats.maxHP;
+        float targetFill = (float)stats.currentHP / (float)stats.stats.maxHP;
 
         hpBar.fillAmount = targetFill;
     }

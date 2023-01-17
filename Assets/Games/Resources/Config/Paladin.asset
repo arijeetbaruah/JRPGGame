@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: Paladin
   m_EditorClassIdentifier: 
   characterID: paladin
+  stats:
+    maxHP: 50
+    attack: 2
+    defense: 2
+    mattack: 5
+    mdefense: 5
+    speed: 1

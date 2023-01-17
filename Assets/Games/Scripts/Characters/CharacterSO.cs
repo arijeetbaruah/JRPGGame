@@ -8,9 +8,5 @@ public class CharacterSO : ScriptableObject
 {
     public string characterID;
 
-    [Button]
-    public void FetchData()
-    {
-        PlayfabEconomy.GetItemInfo(characterID);
-    }
+    public StatsBlock stats;
 }
